@@ -41,14 +41,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
 
 [Files]
-Source: "..\src\ImageTextRecognition\bin\Release\net5.0-windows\ImageTextRecognition.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\src\ImageTextRecognition\bin\Release\net5.0-windows\ImageTextRecognition.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\src\ImageTextRecognition\bin\Release\net5.0-windows\Languages.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\src\ImageTextRecognition\bin\Release\net5.0-windows\License.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\src\ImageTextRecognition\bin\Release\net5.0-windows\languages\*"; DestDir: "{app}\languages\"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "..\src\ImageTextRecognition\bin\Release\net5.0-windows\OcrData\*"; DestDir: "{app}\languages\"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "..\src\ImageTextRecognition\bin\Release\net5.0-windows\IronOcr.Assets.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\src\ImageTextRecognition\bin\Release\net5.0-windows\IronOcr.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\src\ImageTextRecognition\bin\publish\*"; DestDir: "{app}\languages\"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
