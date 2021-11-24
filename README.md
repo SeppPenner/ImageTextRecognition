@@ -2,7 +2,6 @@ ImageTextRecognition
 ====================================
 
 ImageTextRecognition is an executable to scan images and get the text from them using OCR.
-The executable was written and tested in .Net 5.0.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/t6o2g00b9f4ho8ko?svg=true)](https://ci.appveyor.com/project/SeppPenner/imagetextrecognition)
 [![GitHub issues](https://img.shields.io/github/issues/SeppPenner/ImageTextRecognition.svg)](https://github.com/SeppPenner/ImageTextRecognition/issues)
