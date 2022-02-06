@@ -35,17 +35,17 @@ namespace ImageTextRecognition
         /// <summary>
         /// The background worker.
         /// </summary>
-        private readonly BackgroundWorker worker = new BackgroundWorker();
+        private readonly BackgroundWorker worker = new();
 
         /// <summary>
         /// The language.
         /// </summary>
-        private ILanguage language;
+        private ILanguage? language;
 
         /// <summary>
         /// Gets or sets the files.
         /// </summary>
-        private Dictionary<string, string> files = new Dictionary<string, string>();
+        private Dictionary<string, string> files = new ();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Main"/> class.
@@ -85,6 +85,11 @@ namespace ImageTextRecognition
         /// <param name="e">The event args.</param>
         private void RunFileScan(object sender, DoWorkEventArgs e)
         {
+            if (language is null)
+            {
+                return;
+            }
+
             var fileNameText = this.language.GetWord("FileName");
 
             foreach (var (key, _) in this.files)
@@ -112,6 +117,11 @@ namespace ImageTextRecognition
         /// <param name="e">The event args.</param>
         private void FileScanCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            if (language is null)
+            {
+                return;
+            }
+
             MessageBox.Show(this.language.GetWord("FinishedText"), this.language.GetWord("FinishedTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -169,7 +179,7 @@ namespace ImageTextRecognition
                 CheckFileExists = true,
                 CheckPathExists = true,
                 Multiselect = true,
-                Filter = this.language.GetWord("ImageFilter")
+                Filter = this.language?.GetWord("ImageFilter") ?? string.Empty
             };
 
             var result = openFileDialog.ShowDialog();
