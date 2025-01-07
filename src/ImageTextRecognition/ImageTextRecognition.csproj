@@ -11,15 +11,18 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <NoWarn>NU1803</NoWarn>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <NuGetAuditMode>all</NuGetAuditMode>
+        <NuGetAudit>true</NuGetAudit>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
+        <PackageReference Include="GitVersion.MsBuild" Version="6.1.0">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="HaemmerElectronics.SeppPenner.Language" Version="1.1.4" />
+        <PackageReference Include="HaemmerElectronics.SeppPenner.Language" Version="1.1.6" />
         <PackageReference Include="IronOcr.Languages.German" Version="2020.11.2" />
+        <PackageReference Include="System.Drawing.Common" Version="9.0.0" />
     </ItemGroup>
 
     <ItemGroup>
